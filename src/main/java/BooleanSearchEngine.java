@@ -36,7 +36,8 @@ public class BooleanSearchEngine implements SearchEngine {
                         pageEntryList.add(pageEntry);
                         pageEntryMap.put(word, pageEntryList);
                     } else {
-                        pageEntryMap.put(word, List.of(pageEntry));
+                        // по рекомендации заменил List.of на Arrays.asList
+                        pageEntryMap.put(word, Arrays.asList(pageEntry));
                     }
                 }
             }
