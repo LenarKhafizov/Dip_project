@@ -25,7 +25,7 @@ public class Server {
                      BufferedReader reader = new BufferedReader(new InputStreamReader(client.getInputStream()))) {
                     if (client.isConnected()) {
                         out.println("Новое подключение, порт: " + client.getPort());
-                        writer.println("Успешное подключение, введите искомое слово");
+                        writer.println("Успешное подключение, введите искомое слово:");
                     }
                     String word = reader.readLine();
                     word = word.toLowerCase();
@@ -34,7 +34,7 @@ public class Server {
                 }
             }
         } catch (IOException e) {
-            out.println("Не могу стартовать сервер");
+            out.println("Не могу стартовать сервер.");
             e.printStackTrace();
         }
     }
@@ -45,7 +45,7 @@ public class Server {
         List<String> jsonList = new ArrayList<>();
 
         if (pageEntryList.isEmpty()) {
-            return "не найдено";
+            return "Искомое слово не найдено.";
         }
 
         for (PageEntry pageEntry : pageEntryList) {
