@@ -30,7 +30,8 @@ public class Server {
                     String word = reader.readLine();
                     word = word.toLowerCase();
                     List<PageEntry> pageEntryList = engine.search(word);
-                    out.println(answerJson(pageEntryList));
+                    // новая строка вместо out.println(answerJson(pageEntryList))
+                    writer.println(answerJson(pageEntryList));
                 }
             }
         } catch (IOException e) {
